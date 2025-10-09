@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="AlphaCity Minecraft Server Status - Überprüfe den Status unseres Minecraft Servers in Echtzeit">
+    <meta name="theme-color" content="#667eea">
+    <title>AlphaCity's Minecraft Status Seite</title>
+    <link rel="icon" type="image/png" href="img/LOGO.png">
+    <link rel="apple-touch-icon" href="img/LOGO.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video class="video-background" autoplay muted loop playsinline>
+        <source src="video/background_live.mp4" type="video/mp4">
+    </video>
+
+    <div class="container">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Theme wechseln">
+            <span class="theme-icon">🌙</span>
+        </button>
+
+        <div class="header-logo">
+            <img src="img/LOGO.png" alt="AlphaCity Logo" class="logo">
+            <h1>AlphaCity's Minecraft Status</h1>
+        </div>
+
+        <div class="server-input">
+            <input type="text" id="serverHost" placeholder="Server IP oder Domain (z.B. mc.hypixel.net:25565)" value="mc.hypixel.net">
+            <button onclick="checkServer()">Status prüfen</button>
+        </div>
+
+        <div id="statusCard" class="status-card">
+            <div class="status-header">
+                <div id="statusIndicator" class="status-indicator"></div>
+                <div id="statusText" class="status-text"></div>
+            </div>
+
+            <div id="serverInfo" class="server-info"></div>
+
+            <div id="motdContainer"></div>
+
+            <div id="errorMessage" class="error" style="display: none;"></div>
+
+            <div class="last-update">
+                Letzte Aktualisierung: <span id="lastUpdate">-</span>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            Lade Server-Status...
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
